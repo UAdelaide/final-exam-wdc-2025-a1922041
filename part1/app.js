@@ -132,7 +132,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
         'SELECT * FROM WalkRequests WHERE status = 'open' ');
       res.json(walks);
     } catch (err) {
-      res.status(500).json({ error: 'Failed to fetch dogs' });
+      res.status(500).json({ error: 'Failed to fetch walkrequests for open' });
     }
   });
 
