@@ -1,5 +1,6 @@
 var express = require('express');
-var path = require('mysql2/promise');
+var mysql = require('mysql2/promise');
+var path = require('path');
 
 var app = express();
 app.use(express.json());
