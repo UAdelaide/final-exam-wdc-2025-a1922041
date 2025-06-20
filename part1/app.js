@@ -111,9 +111,19 @@ app.get('/users', async (req, res) => {
     const [users] = await db.execute('SELECT * FROM users');
     res.json(users);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
+
+// Route to get users
+app.get('/users', async (req, res) => {
+    try {
+      const [users] = await db.execute('SELECT * FROM users');
+      res.json(users);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch users' });
+    }
+  });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
