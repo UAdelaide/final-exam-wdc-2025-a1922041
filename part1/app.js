@@ -113,7 +113,7 @@ app.get('/api/dogs', async (req, res) => {
       SELECT d.name AS dog_name, d.size, u.username AS owner_username
       FROM Dogs d
       JOIN Users u ON d.owner_id = u.user_id
-        'SELECT * FROM dogs'`);
+      `);
       res.json(dogs);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch dogs' });
