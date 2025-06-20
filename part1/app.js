@@ -115,13 +115,13 @@ app.get('/users', async (req, res) => {
   }
 });
 
-// Route to get users
-app.get('/users', async (req, res) => {
+// Route to get dogs
+app.get('/dogs', async (req, res) => {
     try {
-      const [users] = await db.execute('SELECT * FROM users');
-      res.json(users);
+      const [dogs] = await db.execute('SELECT * FROM dogs');
+      res.json(dogs);
     } catch (err) {
-      res.status(500).json({ error: 'Failed to fetch users' });
+      res.status(500).json({ error: 'Failed to fetch dogs' });
     }
   });
 
