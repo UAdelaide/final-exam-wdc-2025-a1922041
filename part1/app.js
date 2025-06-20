@@ -125,6 +125,17 @@ app.get('/dogs', async (req, res) => {
     }
   });
 
+  // Route to get dogs
+app.get('/dogs', async (req, res) => {
+    try {
+      const [dogs] = await db.execute('SELECT * FROM dogs');
+      res.json(dogs);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch dogs' });
+    }
+  });
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
