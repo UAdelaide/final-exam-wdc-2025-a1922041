@@ -65,7 +65,7 @@ let db;
         )
       `);
 
-    // Walk Requests table
+    // Walk Ratings table
     await db.execute(`
         CREATE TABLE IF NOT EXISTS books (
     request_id INT AUTO_INCREMENT PRIMARY KEY,
