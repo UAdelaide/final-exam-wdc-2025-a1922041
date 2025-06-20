@@ -116,7 +116,7 @@ app.get('/users', async (req, res) => {
 });
 
 // Route to get dogs
-app.get('/dogs', async (req, res) => {
+app.get('api/dogs', async (req, res) => {
     try {
       const [dogs] = await db.execute('SELECT * FROM dogs');
       res.json(dogs);
