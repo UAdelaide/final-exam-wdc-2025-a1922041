@@ -51,7 +51,7 @@ let db;
         )
       `);
 
-    // Dogs table
+    // Walk Requests table
     await db.execute(`
         CREATE TABLE IF NOT EXISTS books (
     dog_id INT AUTO_INCREMENT PRIMARY KEY,
