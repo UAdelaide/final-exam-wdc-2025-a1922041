@@ -139,7 +139,14 @@ app.get('/api/walkrequests/open', async (req, res) => {
     // Route to get walkrequests open
 app.get('/api/walkers/summary', async (req, res) => {
     try {
-      const [summary] = await db.execute('SELECT * FROM dogs');
+      const [summary] = await db.execute('
+      SELECT u.user_id, u.username, COUNT(wr.request_id) AS walks_completed
+      FROM Users u
+      JOIN WalkRatings r ON u.user_id = r.walker_id
+      JOIN WalkRequests wr ON r.request_id = wr.request_id
+      WHERE u.role = 'walker'
+      GROUP BY u.user_id, u.username
+        ');
       res.json(summary);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch summary' });
