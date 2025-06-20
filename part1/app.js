@@ -86,6 +86,8 @@ let db;
 
     // Walk Ratings table
     await db.execute(`
+
+        CREATE TABLE IF NOT EXISTS books (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
     walker_id INT NOT NULL,
