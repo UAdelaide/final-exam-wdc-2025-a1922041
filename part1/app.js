@@ -106,16 +106,6 @@ let db;
   }
 })();
 
-// Route to get users
-app.get('/users', async (req, res) => {
-  try {
-    const [users] = await db.execute('SELECT * FROM users');
-    res.json(users);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch users' });
-  }
-});
-
 // Route to get dogs
 app.get('/api/dogs', async (req, res) => {
     try {
