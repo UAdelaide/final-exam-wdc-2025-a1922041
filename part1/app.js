@@ -162,7 +162,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             WHERE u.role = 'walker'
             GROUP BY u.user_id, u.username
           `);
-
+          res.json(summary);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch summary' });
     }
