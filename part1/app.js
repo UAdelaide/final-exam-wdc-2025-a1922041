@@ -116,7 +116,7 @@ app.get('/users', async (req, res) => {
 });
 
 // Route to get dogs
-app.get('api/dogs', async (req, res) => {
+app.get('/api/dogs', async (req, res) => {
     try {
       const [dogs] = await db.execute('SELECT * FROM dogs');
       res.json(dogs);
@@ -126,7 +126,7 @@ app.get('api/dogs', async (req, res) => {
   });
 
   // Route to get walkrequests open
-app.get('/walkrequests/open', async (req, res) => {
+app.get('/api/walkrequests/open', async (req, res) => {
     try {
       const [dogs] = await db.execute('SELECT * FROM dogs');
       res.json(dogs);
@@ -136,7 +136,7 @@ app.get('/walkrequests/open', async (req, res) => {
   });
 
     // Route to get walkrequests open
-app.get('/walkers/summary', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
     try {
       const [dogs] = await db.execute('SELECT * FROM dogs');
       res.json(dogs);
